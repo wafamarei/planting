@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+    	td {
+        	width: 50px;
+        	height: 50px;
+        	border: 1px solid black;
+    	}
+			button{
+				width: 50px;
+				height: 50px;
+			}
+	</style>
+	<script>
+    	var MainColor = 'white';
+
+    	function selectColor(color) {
+        	MainColor = color;
+    	}
+
+    	function changeTo(index) {
+        	var divs = document.getElementsByClassName('divs');
+        	divs[index].style.backgroundColor = MainColor;
+    	}
+
+    	function resetColors() {
+        	MainColor='white';
+        	var divs = document.getElementsByClassName('divs');
+        	for (var i = 0; i < divs.length; i++) {
+            	divs[i].style.backgroundColor = MainColor;
+        	}
+    	}
+	</script>
+</head>
+<center>
+<body style="background-color: bisque;";>
+	<table>
+    	<tr>
+        	<td class="divs" onclick="changeTo(0)"></td>
+        	<td class="divs" onclick="changeTo(1)"></td>
+        	<td class="divs" onclick="changeTo(2)"></td>
+    	</tr>
+    	<tr>
+        	<td class="divs" onclick="changeTo(3)"></td>
+        	<td class="divs" onclick="changeTo(4)"></td>
+        	<td class="divs" onclick="changeTo(5)"></td>
+    	</tr>
+    	<tr>
+        	<td class="divs" onclick="changeTo(6)"></td>
+        	<td class="divs" onclick="changeTo(7)"></td>
+        	<td class="divs" onclick="changeTo(8)"></td>
+    	</tr>
+	</table>
+	<br>
+	<button onclick="selectColor('red')" style="background-color: red"></button>
+	<button onclick="selectColor('blue')" style="background-color: blue"></button>
+	<button onclick="selectColor('green')" style="background-color: green"></button>
+	<button onclick="selectColor('yellow')"style="background-color: yellow"></button>
+	<br>
+	<button onclick="resetColors()">Reset</button>
+</center>
+</body>
+</html>
